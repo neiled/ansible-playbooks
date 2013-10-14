@@ -1,0 +1,69 @@
+
+PLAY [webservers] ************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [localhost]
+ok: [96.126.105.254]
+
+TASK: [rbenv | install build depends] ***************************************** 
+ok: [96.126.105.254] => (item=build-essential,git,libcurl4-openssl-dev,libssl-dev,libxml2-dev,libxslt1-dev,zlib1g-dev)
+changed: [localhost] => (item=build-essential,git,libcurl4-openssl-dev,libssl-dev,libxml2-dev,libxslt1-dev,zlib1g-dev)
+
+TASK: [rbenv | update rbenv repo] ********************************************* 
+changed: [localhost]
+ok: [96.126.105.254]
+
+TASK: [rbenv | add rbenv to path] ********************************************* 
+changed: [localhost]
+ok: [96.126.105.254]
+
+TASK: [rbenv | add rbenv initialization to profile] *************************** 
+changed: [localhost]
+ok: [96.126.105.254]
+
+TASK: [rbenv | check ruby-build installed] ************************************ 
+failed: [localhost] => {"changed": true, "cmd": ["test", "-x", "/usr/local/bin/ruby-build"], "delta": "0:00:00.025566", "end": "2013-10-11 08:14:40.753227", "rc": 1, "start": "2013-10-11 08:14:40.727661"}
+...ignoring
+changed: [96.126.105.254]
+
+TASK: [rbenv | create temporary directory] ************************************ 
+skipping: [96.126.105.254]
+changed: [localhost]
+
+TASK: [rbenv | clone ruby-build repo] ***************************************** 
+skipping: [96.126.105.254]
+changed: [localhost]
+
+TASK: [rbenv | install ruby-build] ******************************************** 
+skipping: [96.126.105.254]
+changed: [localhost]
+
+TASK: [rbenv | remove temporary directory] ************************************ 
+skipping: [96.126.105.254]
+changed: [localhost]
+
+TASK: [rbenv | check ruby 2.0.0-p247 installed] ******************************* 
+failed: [localhost] => {"changed": true, "cmd": "RBENV_ROOT=/usr/local/rbenv rbenv versions | grep 2.0.0-p247 ", "delta": "0:00:00.145070", "end": "2013-10-11 08:14:42.659231", "rc": 1, "start": "2013-10-11 08:14:42.514161"}
+...ignoring
+changed: [96.126.105.254]
+
+TASK: [rbenv | install ruby 2.0.0-p247] *************************************** 
+skipping: [96.126.105.254]
+changed: [localhost]
+
+TASK: [rbenv | set global ruby 2.0.0-p247] ************************************ 
+skipping: [96.126.105.254]
+changed: [localhost]
+
+TASK: [rbenv | rehash] ******************************************************** 
+skipping: [96.126.105.254]
+changed: [localhost]
+
+TASK: [rbenv | set gemrc] ***************************************************** 
+changed: [localhost]
+ok: [96.126.105.254]
+
+PLAY RECAP ******************************************************************** 
+96.126.105.254             : ok=8    changed=2    unreachable=0    failed=0   
+localhost                  : ok=15   changed=14   unreachable=0    failed=0   
+
