@@ -95,3 +95,8 @@
     - name: nginx | Configuration
       template: src=templates/nginx.conf.j2 dest=/etc/nginx/nginx.conf owner=root group=root mode=0644
       sudo: yes
+      
+    -name: nginx | Init configuration
+     template: src=templates/init_nginx.conf.j2 dest=/etc/init/nginx.conf owner=root group=root mode=0644
+    
+    
