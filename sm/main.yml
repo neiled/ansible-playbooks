@@ -24,6 +24,7 @@
         - libxslt1-dev
         - zlib1g-dev
         - libpq-dev
+        - nginx
       sudo: yes
 
     - name: rbenv | update rbenv repo
@@ -35,8 +36,8 @@
       sudo: yes
 
     - name: rbenv | add rbenv initialization to profile
-      template: src=templates/rbenv.sh.j2 dest=/etc/profile.d/rbenv.sh owner=root group=root mode=0755
-      sudo: yes
+      template: src=templates/rbenv.sh.j2 dest=~/.zshrc owner=neiled group=neiled mode=0755
+      template: src=templates/rbenv.sh.j2 dest=~/.bashrc owner=neiled group=neiled mode=0755
 
     - name: rbenv | check ruby-build installed
       command: test -x /usr/local/bin/ruby-build
